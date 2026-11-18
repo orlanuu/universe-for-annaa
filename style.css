@@ -6,12 +6,9 @@
 
 body {
     min-height: 100vh;
-    background: radial-gradient(
-        ellipse at bottom,
-        #17113b 0%,
-        #080719 55%,
-        #02020a 100%
-    );
+    background:
+        radial-gradient(ellipse at 50% 100%, #21134c, transparent 65%),
+        linear-gradient(#02020a, #100b28);
     color: white;
     font-family: Georgia, serif;
     overflow-x: hidden;
@@ -22,9 +19,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 30px 20px;
+    padding: 55px 20px 30px;
 }
 
 h1 {
@@ -44,21 +40,106 @@ h1 {
 
 .description {
     color: #b7acd2;
-    font-size: 1rem;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
 }
 
-button {
+#counter {
+    color: #d9c5ff;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+#star-field {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    height: 65vh;
+    min-height: 400px;
+    border-radius: 20px;
+}
+
+.star {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: none;
+    color: #fff4ff;
+    font-size: 22px;
+    padding: 5px;
+    cursor: pointer;
+    text-shadow:
+        0 0 5px white,
+        0 0 12px #b77cff,
+        0 0 25px #8952ff;
+    animation: twinkle 2.5s infinite alternate;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.star:hover {
+    transform: translate(-50%, -50%) scale(1.8);
+    color: #ffe5a8;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.4;
+        text-shadow: 0 0 5px white;
+    }
+    to {
+        opacity: 1;
+        text-shadow: 0 0 20px white, 0 0 35px #a875ff;
+    }
+}
+
+#message-box {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90%, 420px);
+    padding: 35px 25px;
+    background: rgba(23, 15, 51, 0.97);
+    border: 1px solid #a875ff;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(168, 117, 255, 0.5);
+    text-align: center;
+}
+
+#message-title {
+    color: #ead5ff;
+    margin-bottom: 20px;
+}
+
+#message-text {
+    color: #ddd1ef;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+#message-box button {
     background: linear-gradient(135deg, #8055c9, #bd83e8);
     color: white;
     border: none;
     border-radius: 30px;
-    padding: 15px 30px;
-    font-size: 1rem;
+    padding: 12px 25px;
     cursor: pointer;
-    box-shadow: 0 0 25px #8055c9;
 }
 
-button:hover {
-    transform: scale(1.05);
+.hidden {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding-top: 35px;
+    }
+
+    #star-field {
+        height: 60vh;
+    }
+
+    .star {
+        font-size: 18px;
+    }
 }
