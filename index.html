@@ -3,31 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>A Universe for Anna ❤️</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <main class="container">
 
         <h1>A Universe for Anna</h1>
 
-        <p class="subtitle">
-            365 stars. 365 little pieces of me.
-        </p>
+        <p class="subtitle">365 stars. 365 little pieces of me.</p>
 
         <p class="description">
-            Somewhere in this universe, every star holds something I want you to know.
+            A little universe I made just for you.
         </p>
 
-        <button>
-            Enter Our Universe ✨
-        </button>
+        <p id="counter">365 stars waiting to be discovered ✨</p>
 
-    </div>
+        <div id="star-field"></div>
+
+        <div id="message-box" class="hidden">
+            <h2 id="message-title"></h2>
+            <p id="message-text"></p>
+            <button id="close-message">Close ✨</button>
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
