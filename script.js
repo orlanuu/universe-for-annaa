@@ -199,6 +199,10 @@ const messages = [
     {
         fact: "Out of all the things I love doing, surfing will always hold a special place in my heart.",
         compliment: "And out of all the people in my life, you hold a special place in my heart."
+    },
+    {
+        fact: "I pay attention to the little details about you, even the things you might not think I'd notice.",
+        compliment: "Pink and leopard print will always remind me of you. I swear you look especially beautiful whenever you wear them."
     }
 ];
 
